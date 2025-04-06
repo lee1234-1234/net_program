@@ -3,7 +3,7 @@ import random
 
 def run_device1():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind(('', 9001))
+    s.bind(('', 1001))
     s.listen(5)
     print("Device1 (온도, 습도, 조도) 서버 시작됨, 포트 9001")
     

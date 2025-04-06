@@ -3,7 +3,7 @@ import random
 
 def run_device2():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind(('', 9002))
+    s.bind(('', 1002))
     s.listen(5)
     print("Device2 (심박수, 걸음수, 소모 칼로리) 서버 시작됨, 포트 9002")
     

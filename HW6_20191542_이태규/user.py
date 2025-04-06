@@ -18,8 +18,8 @@ def send_quit(port):
     print(f"Device (port {port}) 응답: {data}")
 
 def main():
-    device1_port = 9001
-    device2_port = 9002
+    device1_port = 1001
+    device2_port = 1002
     data_file = "data.txt"
     
     while True:

@@ -2,7 +2,6 @@ import socket
 import random
 
 def run_device1():
-    # 디바이스 1: 온도, 습도, 조도 데이터를 제공 (포트 9001)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind(('', 9001))
     s.listen(5)
@@ -18,7 +17,6 @@ def run_device1():
         
         print("Device1: 받은 메시지:", data)
         if data == "Request":
-            # 온도: 0~40, 습도: 0~100, 조도: 70~150 (임의의 정수 생성)
             temp = random.randint(0, 40)
             humid = random.randint(0, 100)
             illum = random.randint(70, 150)

@@ -2,7 +2,6 @@ import socket
 import random
 
 def run_device2():
-    # 디바이스 2: 심박수, 걸음수, 소모 칼로리 데이터를 제공 (포트 9002)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind(('', 9002))
     s.listen(5)
@@ -18,7 +17,6 @@ def run_device2():
         
         print("Device2: 받은 메시지:", data)
         if data == "Request":
-            # 심박수: 40~140, 걸음수: 2000~6000, 소모칼로리: 1000~4000
             heartbeat = random.randint(40, 140)
             steps = random.randint(2000, 6000)
             cal = random.randint(1000, 4000)

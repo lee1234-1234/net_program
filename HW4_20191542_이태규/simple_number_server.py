@@ -1,11 +1,24 @@
 from socket import *
-import re
 
-def calculate_expression(expression):
+def calculate(expr):
     try:
-        return round(eval(expression), 1)
-    except Exception as e:
-        return str(e)
+        expr = expr.replace(' ', '')
+        if '+' in expr:
+            a, b = expr.split('+')
+            return str(int(a) + int(b))
+        elif '-' in expr:
+            a, b = expr.split('-')
+            return str(int(a) - int(b))
+        elif '*' in expr:
+            a, b = expr.split('*')
+            return str(int(a) * int(b))
+        elif '/' in expr:
+            a, b = expr.split('/')
+            return format(int(a) / int(b), '.1f')
+        else:
+            return '지원하지 않는 연산'
+    except:
+        return '잘못된 수식'
 
 s = socket(AF_INET, SOCK_STREAM)
 s.bind(('', 3333))
@@ -24,7 +37,7 @@ while True:
         if expression.lower() == 'q':
             break
         
-        result = calculate_expression(expression)
+        result = calculate(expression)
         client.send(str(result).encode())
     
     client.close()

@@ -1,6 +1,6 @@
 from socket import *
 
-port = 5432
+port = 4321
 BUFFSIZE = 1024
 
 sock = socket(AF_INET, SOCK_DGRAM)

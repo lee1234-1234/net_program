@@ -1,7 +1,7 @@
 from socket import *
 
 BUF_SIZE = 1024
-port = 5432
+port = 4321
 
 s_sock = socket(AF_INET, SOCK_DGRAM)
 s_sock.bind(('', port))

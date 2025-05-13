@@ -1,4 +1,5 @@
 from socket import *
+import random
 
 BUF_SIZE = 1024
 port = 4321
@@ -11,15 +12,19 @@ mbox = {}
 
 while True:
     data, addr = s_sock.recvfrom(BUF_SIZE)
-    msg = data.decode() 
+    msg = data.decode()
 
     if msg == 'quit':
         break
 
+    if random.random() < 0.25:
+        print(f"message: {msg}")
+        continue
+
     elif msg.startswith('send'):
         _, mboxid, *message = msg.split()
         message = ' '.join(message)
-        
+
         if mboxid not in mbox:
             mbox[mboxid] = []
             
@@ -35,11 +40,3 @@ while True:
             s_sock.sendto(b'No messages', addr)
             
 s_sock.close()
-#서버의 주소는 localhost, 5050)로 할 것
-#송신자, 수신자 ID는 1~50000사이의 랜덤 정수값.
-#조도, 습도, 온도, 기압은 1~100사이의 랜덤 정수값.
-#순서번호는 1~100000 사이의 랜덤 정수값.
-#클라이언트가 서버로 접속 시, 'Hello' 메시지(문자열)을 전송
-#서버는 'Hello' 메시지 수신 시, 각 필드의 값을 랜덤하게 생성하고, 위 포맷에 맞춰서 클라이언트에게 전송
-#클라이언트는 서버로부터 수신한 메시지를 화면에 출력
-#위를 참고해서서

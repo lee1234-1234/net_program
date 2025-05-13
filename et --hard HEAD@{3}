@@ -1,0 +1,28 @@
+[33m54d00e3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m494771a[m HEAD@{1}: reset: moving to HEAD~1
+[33m63b04c2[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{2}: commit: Real
+[33m494771a[m HEAD@{3}: commit: practice
+[33m54d00e3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{4}: commit: net_program_HW8
+[33m159eb46[m HEAD@{5}: pull --tags origin main: Merge made by the 'ort' strategy.
+[33m840f174[m HEAD@{8}: commit (amend): Not this file_HW
+[33m006ff2b[m HEAD@{9}: commit (amend): Not this file_HW
+[33ma6a2cf8[m HEAD@{10}: commit: Not this file_HW
+[33m04975cc[m HEAD@{11}: commit: HW4_upgrade_ver
+[33m8b799b4[m HEAD@{12}: commit: net_program_HW6
+[33m5326c85[m HEAD@{13}: commit: net_program_HW6
+[33m8d02ac2[m HEAD@{14}: pull --tags origin main: Merge made by the 'ort' strategy.
+[33m01d3dc4[m HEAD@{15}: commit: net_program_HW6
+[33m3346b3e[m HEAD@{16}: commit: net_program_hw5
+[33m653e2a0[m HEAD@{17}: commit: hw5
+[33mc00bfcd[m HEAD@{18}: commit: net_program_HW4
+[33m4e67244[m HEAD@{19}: pull --tags origin main: Merge made by the 'ort' strategy.
+[33m601f3c9[m HEAD@{20}: commit: net_program_HW4
+[33md66f177[m HEAD@{21}: pull --tags origin main: Merge made by the 'ort' strategy.
+[33m9e11f72[m HEAD@{22}: commit: net_program_HW3
+[33mb78996a[m HEAD@{23}: commit: net_program HW3
+[33m53f30df[m HEAD@{24}: commit: This is the first HW
+[33me6f9f7c[m HEAD@{25}: commit: Delete all files
+[33m2cd4e40[m HEAD@{26}: commit: Delete hello3.txy
+[33mb03aec2[m HEAD@{27}: pull origin main: Fast-forward
+[33mb98cdce[m HEAD@{28}: Branch: renamed refs/heads/master to refs/heads/main
+[33mb98cdce[m HEAD@{30}: commit (initial): message1

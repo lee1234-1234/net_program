@@ -1,4 +1,5 @@
 from socket import *
+import random
 
 BUF_SIZE = 1024
 port = 4321
@@ -11,15 +12,19 @@ mbox = {}
 
 while True:
     data, addr = s_sock.recvfrom(BUF_SIZE)
-    msg = data.decode() 
+    msg = data.decode()
 
     if msg == 'quit':
         break
 
+    if random.random() < 0.25:
+        print(f"message: {msg}")
+        continue
+
     elif msg.startswith('send'):
         _, mboxid, *message = msg.split()
         message = ' '.join(message)
-        
+
         if mboxid not in mbox:
             mbox[mboxid] = []
             

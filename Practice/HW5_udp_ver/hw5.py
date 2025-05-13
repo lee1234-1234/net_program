@@ -10,14 +10,11 @@ def get_mime_type(filename):
     else:
         return "application/octet-stream"
 
-s = socket()
+s = socket(AF_INET, SOCK_DGRAM)
 s.bind(('', 80))
-s.listen(10)
 
 while True:
-    c, addr = s.accept()
-    
-    data = c.recv(1024)
+    data, addr = s.recvfrom(4096)
     msg = data.decode()
     req = msg.split('\r\n')
     
@@ -43,12 +40,11 @@ while True:
                 resp_line = "HTTP/1.1 200 OK\r\n"
                 resp_headers = "Content-Type: " + mime + "\r\n\r\n"
                 resp = resp_line + resp_headers
-                c.send(resp.encode() + body)
+                s.sendto(resp.encode() + body, addr)
             except Exception as e:
                 print("파일을 찾을 수 없음:", filename, e)
                 resp_line = "HTTP/1.1 404 Not Found\r\n"
                 resp_headers = "\r\n"
                 resp_body = "<html><head><title>Not Found</title></head><body>Not Found</body></html>"
                 resp = resp_line + resp_headers + resp_body
-                c.send(resp.encode())
-    c.close()
+                s.sendto(resp.encode(), addr)
